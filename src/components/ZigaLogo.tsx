@@ -4,109 +4,73 @@ interface ZigaLogoProps {
   className?: string;
   size?: number;
   showText?: boolean;
-  animated?: boolean;
+  theme?: "light" | "dark";
 }
 
 export default function ZigaLogo({
   className = "",
-  size = 36,
+  size = 32,
   showText = true,
-  animated = true,
+  theme = "light",
 }: ZigaLogoProps) {
+  const isDark = theme === "dark";
+
   return (
-    <div className={`inline-flex items-center gap-3 select-none ${className}`}>
-      {/* Futuristic Vector "Z" Glyph with Layered Cyber Cuts & Radiant Gradient Glow */}
+    <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
+      {/* Precision Geometric Z Glyph */}
       <div
-        className="relative flex items-center justify-center rounded-xl p-0.5"
+        className="relative flex items-center justify-center rounded-lg shadow-sm"
         style={{
           width: size,
           height: size,
+          backgroundColor: "#0b1d3a",
         }}
       >
-        {/* Outer ambient glow */}
-        <div
-          className={`absolute inset-0 rounded-xl bg-gradient-to-tr from-[#1b5ebe] via-[#00f2fe] to-[#4facfe] opacity-75 blur-md ${
-            animated ? "animate-pulse" : ""
-          }`}
-          style={{ transform: "scale(0.9)" }}
-        />
+        <svg
+          viewBox="0 0 100 100"
+          className="w-[68%] h-[68%]"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="zigaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#00f2fe" />
+              <stop offset="60%" stopColor="#38bdf8" />
+              <stop offset="100%" stopColor="#1b5ebe" />
+            </linearGradient>
+            <linearGradient id="zigaWhite" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="#e0f2fe" />
+            </linearGradient>
+          </defs>
 
-        {/* Inner high-tech badge container */}
-        <div className="relative w-full h-full rounded-xl bg-[#081326] border border-cyan-400/30 flex items-center justify-center overflow-hidden shadow-2xl">
-          {/* Subtle circuit lines background */}
-          <svg
-            className="absolute inset-0 w-full h-full opacity-20 pointer-events-none"
-            viewBox="0 0 100 100"
-          >
-            <path
-              d="M0 20 H100 M0 50 H100 M0 80 H100 M20 0 V100 M50 0 V100 M80 0 V100"
-              stroke="#00f2fe"
-              strokeWidth="0.5"
-            />
-          </svg>
+          {/* Top Bar */}
+          <path d="M16 22 H84 L72 36 H28 L16 22Z" fill="url(#zigaGrad)" />
 
-          {/* Precision Designed "Z" Geometric Vector */}
-          <svg
-            viewBox="0 0 100 100"
-            className="w-[72%] h-[72%] drop-shadow-[0_2px_10px_rgba(0,242,254,0.6)]"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <defs>
-              <linearGradient id="zigaGradMain" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#00f2fe" />
-                <stop offset="50%" stopColor="#38bdf8" />
-                <stop offset="100%" stopColor="#1b5ebe" />
-              </linearGradient>
-              <linearGradient id="zigaGradAccent" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#ffffff" />
-                <stop offset="100%" stopColor="#00f2fe" />
-              </linearGradient>
-            </defs>
+          {/* Dynamic Angular Diagonal */}
+          <path d="M72 34 L32 72 H48 L86 38 L72 34Z" fill="url(#zigaWhite)" />
+          <path d="M60 42 L24 76 H16 L52 42 H60Z" fill="url(#zigaGrad)" />
 
-            {/* Top Bar of Z with angled cut */}
-            <path
-              d="M18 22 H82 L72 36 H28 L18 22Z"
-              fill="url(#zigaGradMain)"
-            />
+          {/* Bottom Bar */}
+          <path d="M16 78 L28 64 H72 L84 78 H16Z" fill="url(#zigaGrad)" />
 
-            {/* Center Dynamic Diagonal Slashes */}
-            <path
-              d="M74 34 L32 72 H48 L86 38 L74 34Z"
-              fill="url(#zigaGradAccent)"
-            />
-            <path
-              d="M62 42 L24 76 H16 L54 42 H62Z"
-              fill="url(#zigaGradMain)"
-              opacity="0.85"
-            />
-
-            {/* Bottom Bar of Z */}
-            <path
-              d="M18 78 L28 64 H72 L82 78 H18Z"
-              fill="url(#zigaGradMain)"
-            />
-
-            {/* Futuristic Tech Dots */}
-            <circle cx="86" cy="22" r="3.5" fill="#00f2fe" />
-            <circle cx="14" cy="78" r="3.5" fill="#38bdf8" />
-          </svg>
-        </div>
+          {/* Precision Accents */}
+          <circle cx="86" cy="22" r="3.5" fill="#00f2fe" />
+          <circle cx="14" cy="78" r="3.5" fill="#38bdf8" />
+        </svg>
       </div>
 
-      {/* Brand Wordmark */}
       {showText && (
-        <div className="flex flex-col">
-          <div className="flex items-center gap-1.5 leading-none">
-            <span className="text-xl font-black tracking-wider text-white font-mono">
-              ZIGA
-            </span>
-            <span className="text-xs px-1.5 py-0.5 rounded font-bold uppercase tracking-widest bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
-              .io
-            </span>
-          </div>
-          <span className="text-[9px] font-semibold tracking-widest text-slate-400 uppercase mt-1">
-            Retail & Commerce OS
+        <div className="flex items-center gap-1.5">
+          <span
+            className={`font-sans text-xl font-black tracking-tight leading-none ${
+              isDark ? "text-white" : "text-gray-900"
+            }`}
+          >
+            Ziga
+          </span>
+          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase font-mono tracking-wider bg-blue-50 text-[#1b5ebe] border border-blue-200">
+            POS
           </span>
         </div>
       )}

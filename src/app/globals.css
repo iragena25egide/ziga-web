@@ -2,14 +2,15 @@
 
 @layer base {
   :root {
-    --background: #060d1a;
-    --foreground: #f8fafc;
-    --navy-deep: #060d1a;
-    --navy-card: #0b1a30;
-    --navy-border: rgba(255, 255, 255, 0.08);
+    --background: #ffffff;
+    --foreground: #111827;
+    --navy-primary: #0b1d3a;
+    --navy-deep: #071326;
     --blue-accent: #1b5ebe;
-    --cyan-glow: #00f2fe;
-    --emerald-accent: #10b981;
+    --blue-hover: #164ea0;
+    --cyan-accent: #00f2fe;
+    --gray-bg: #f8fafc;
+    --gray-border: #e2e8f0;
   }
 
   body {
@@ -21,41 +22,60 @@
   }
 }
 
-/* Custom glow and backdrop effects */
-.ziga-glow {
-  box-shadow: 0 0 50px -10px rgba(0, 242, 254, 0.25), 0 0 30px -15px rgba(27, 94, 190, 0.4);
+/* Higura-style 3D tactile button shadow */
+.btn-tactile-primary {
+  color: #ffffff;
+  background-color: #1b5ebe;
+  box-shadow: 0 3px 0 0 #13468f, 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all 0.15s ease-in-out;
+}
+.btn-tactile-primary:hover {
+  background-color: #164ea0;
+  box-shadow: 0 3px 0 0 #0f356f, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.btn-tactile-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #0f356f, 0 1px 1px rgba(0, 0, 0, 0.06);
 }
 
-.ziga-glow-blue {
-  box-shadow: 0 0 40px -10px rgba(27, 94, 190, 0.5);
+.btn-tactile-secondary {
+  color: #1f2937;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 3px 0 0 #d1d5db, 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.15s ease-in-out;
+}
+.btn-tactile-secondary:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 3px 0 0 #c4c9d1, 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.btn-tactile-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #c4c9d1, 0 1px 1px rgba(0, 0, 0, 0.04);
 }
 
-.ziga-border-gradient {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+/* Subtle dot grid pattern */
+.dot-pattern-light {
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1.2px);
+  background-size: 8px 8px;
 }
 
-.ziga-card-hover {
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.ziga-card-hover:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 242, 254, 0.3);
-  box-shadow: 0 20px 40px -15px rgba(0, 242, 254, 0.15);
+.dot-pattern-navy {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1.2px);
+  background-size: 8px 8px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #060d1a;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
 }
