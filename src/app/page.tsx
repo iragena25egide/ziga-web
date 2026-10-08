@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Preloader from "@/components/Preloader";
 import MovingDashboardShowcase from "@/components/MovingDashboardShowcase";
 import ZigaPayPhoneShowcase from "@/components/ZigaPayPhoneShowcase";
 import ClientCarousel from "@/components/ClientCarousel";
@@ -87,6 +88,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-hidden font-sans">
+      <Preloader />
       <Navbar />
 
       {/* ────────────────── 1. HERO SECTION (Color from Image: #e8e9ef, Clean & Computer Hardware Frame) ────────────────── */}
@@ -115,28 +117,11 @@ export default function HomePage() {
             <p
               data-aos="fade-up"
               data-aos-delay="200"
-              className="text-base sm:text-xl text-slate-700 leading-relaxed max-w-2xl mb-8 font-normal"
+              className="text-base sm:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal"
             >
               Ziga provides African retail businesses with a unified operating system:
               efficient cashier registers with <strong>Ziga POS</strong> and seamless mobile money checkouts with <strong>Ziga Pay</strong>.
             </p>
-
-            {/* Single Human-Designed CTA - All setup/download is accessible in web app after onboarding */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="300"
-              className="flex items-center gap-3.5"
-            >
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ziga-primary h-12 px-7 text-sm font-semibold gap-2"
-              >
-                <span>Get Started</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Real Moving Dashboard Showcase with Physical Computer Chassis */}
