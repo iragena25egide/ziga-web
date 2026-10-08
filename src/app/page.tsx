@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MovingDashboardShowcase from "@/components/MovingDashboardShowcase";
+import ZigaPayPhoneShowcase from "@/components/ZigaPayPhoneShowcase";
 import ClientCarousel from "@/components/ClientCarousel";
 import {
   ArrowRight,
-  Download,
   WifiOff,
   Printer,
   ScanBarcode,
@@ -15,11 +15,6 @@ import {
   Building2,
   CheckCircle2,
   Package,
-  QrCode,
-  Smartphone,
-  Wallet,
-  Coins,
-  Check,
 } from "lucide-react";
 import AOS from "aos";
 
@@ -67,29 +62,6 @@ export default function HomePage() {
     },
   ];
 
-  const payFeatures = [
-    {
-      title: "MTN MoMo & Airtel Money QR",
-      desc: "Display dynamic QR codes at checkout so customers scan and approve payments instantly without typing manual phone numbers.",
-      icon: QrCode,
-    },
-    {
-      title: "Automated Reference Matching",
-      desc: "Eliminates cashier fake SMS fraud. Ziga Pay matches digital mobile money callbacks directly against open shopping carts.",
-      icon: CheckCircle2,
-    },
-    {
-      title: "Tap & Mobile Payments",
-      desc: "Enable smartphone contact payments and electronic debit verification for in-person customer queues.",
-      icon: Smartphone,
-    },
-    {
-      title: "Consolidated Daily Cash-Out",
-      desc: "Aggregate mobile money collections and cash drawer totals into a single reconciled daily financial report.",
-      icon: Wallet,
-    },
-  ];
-
   const faqs = [
     {
       q: "What is the difference between Ziga POS and Ziga Pay?",
@@ -101,7 +73,7 @@ export default function HomePage() {
     },
     {
       q: "Do I need internet to use Ziga POS?",
-      a: "No. The Ziga POS Desktop application (.exe / .dmg) operates completely offline. Cashiers can continue selling and printing receipts without internet, and the system syncs once reconnected.",
+      a: "No. The Ziga POS application operates completely offline. Cashiers can continue selling and printing receipts without internet, and the system syncs once reconnected.",
     },
     {
       q: "Which thermal printers and scanners are supported?",
@@ -117,10 +89,10 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-hidden font-sans">
       <Navbar />
 
-      {/* ────────────────── 1. HERO SECTION (Color from Image: #e8e9ef, Clean & Human-Crafted) ────────────────── */}
-      <section className="relative pt-24 pb-14 md:pt-32 md:pb-20 px-4 sm:px-6 bg-[#e8e9ef] text-slate-900">
+      {/* ────────────────── 1. HERO SECTION (Color from Image: #e8e9ef, Clean & Computer Hardware Frame) ────────────────── */}
+      <section className="relative pt-24 pb-14 md:pt-30 md:pb-20 px-4 sm:px-6 bg-[#e8e9ef] text-slate-900">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl mb-10">
             {/* Clean Tag */}
             <div
               data-aos="fade-down"
@@ -146,33 +118,23 @@ export default function HomePage() {
               className="text-base sm:text-xl text-slate-700 leading-relaxed max-w-2xl mb-8 font-normal"
             >
               Ziga provides African retail businesses with a unified operating system:
-              offline-ready cashier registers with <strong>Ziga POS</strong> and seamless mobile money checkouts with <strong>Ziga Pay</strong>.
+              efficient cashier registers with <strong>Ziga POS</strong> and seamless mobile money checkouts with <strong>Ziga Pay</strong>.
             </p>
 
-            {/* Human-Designed Buttons */}
+            {/* Single Human-Designed CTA - All setup/download is accessible in web app after onboarding */}
             <div
               data-aos="fade-up"
               data-aos-delay="300"
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10"
+              className="flex items-center gap-3.5 mb-10"
             >
               <a
                 href="https://pos.ziga.io"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-ziga-primary h-12 px-6 text-sm gap-2"
+                className="btn-ziga-primary h-12 px-7 text-sm font-semibold gap-2"
               >
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ziga-outline h-12 px-6 text-sm gap-2 text-slate-800"
-              >
-                <Download className="w-4 h-4 text-slate-600" />
-                <span>Download Desktop Register</span>
               </a>
             </div>
 
@@ -183,7 +145,7 @@ export default function HomePage() {
               className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-300/80 text-xs text-slate-700"
             >
               <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Offline-first desktop registers
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Offline-first registers
               </span>
               <span className="flex items-center gap-1.5 font-medium">
                 <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Thermal ESC/POS printing (58/80mm)
@@ -194,7 +156,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Real Moving Dashboard Showcase (2 Rotating Views) */}
+          {/* Real Moving Dashboard Showcase with Physical Computer Chassis */}
           <div className="mt-6 relative z-20">
             <MovingDashboardShowcase />
           </div>
@@ -251,7 +213,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────── 3. ZIGA PAY INFRASTRUCTURE (NEW PILLAR) ────────────────── */}
+      {/* ────────────────── 3. ZIGA PAY WITH PHYSICAL PHONE HARDWARE FRAME ────────────────── */}
       <section id="pay" className="py-16 md:py-24 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-12">
@@ -259,33 +221,19 @@ export default function HomePage() {
               02 • ZIGA PAY
             </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Modern Payment Collection for Rwanda
+              Modern Payment Collection for Retailers
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed">
               Eliminate cashier receipt errors and fake SMS notifications with integrated digital mobile money and QR checkouts.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {payFeatures.map((feat, i) => (
-              <div
-                key={i}
-                className="p-6 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 text-[#1b5ebe] flex items-center justify-center mb-4">
-                    <feat.icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">{feat.title}</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">{feat.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* Physical Smartphone Design Showcase */}
+          <ZigaPayPhoneShowcase />
         </div>
       </section>
 
-      {/* ────────────────── 4. HARDWARE & DESKTOP REGISTERS ────────────────── */}
+      {/* ────────────────── 4. HARDWARE COMPATIBILITY ────────────────── */}
       <section id="hardware" className="py-16 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
@@ -310,35 +258,26 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Electronic cash drawers (RJ11/RJ12 auto-kick on checkout)
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Windows 10/11 (.exe installer) and macOS (.dmg disk image)
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Direct web register or desktop terminal package inside your workspace
               </li>
             </ul>
           </div>
 
           <div className="p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Desktop Register Installer</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-2">Dedicated Workspace Access</h3>
             <p className="text-xs text-slate-600 leading-relaxed mb-6">
-              Download the native desktop register application for offline checkout speed and instant printer linking.
+              Eligible businesses get access to register terminal setups, cashier shift isolation, and automated receipt drivers directly from their account portal.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ziga-primary h-11 px-5 text-xs flex-1 text-center"
-              >
-                Download for Windows
-              </a>
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-ziga-outline h-11 px-5 text-xs flex-1 text-center"
-              >
-                Download for macOS
-              </a>
-            </div>
+            <a
+              href="https://pos.ziga.io"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ziga-primary h-11 px-5 text-xs w-full text-center"
+            >
+              <span>Access Your Store Workspace</span>
+              <ArrowRight className="w-4 h-4 ml-1.5" />
+            </a>
           </div>
         </div>
       </section>
@@ -412,7 +351,7 @@ export default function HomePage() {
               Ready to modernize your retail store?
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-              Create your company workspace today. Test sales, barcode scanning, and thermal printing with our 1-month free trial.
+              Create your company workspace today. Test sales, barcode scanning, and mobile money checkouts with our 1-month free trial.
             </p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
