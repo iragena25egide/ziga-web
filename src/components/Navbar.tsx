@@ -10,29 +10,33 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[80] bg-white/95 backdrop-blur-md border-b border-slate-200">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
-        {/* Brand */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <ZigaLogo size={32} showText={true} />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Brand: ONLY the Z Logo, identical to Footer */}
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+          <ZigaLogo size={34} />
+          <span className="font-bold text-lg text-slate-900 tracking-tight">Ziga</span>
         </Link>
 
         {/* Clean Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="#features" className="hover:text-[#1b5ebe] transition-colors">
-            Features
+        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+          <a href="#pos" className="hover:text-[#1b5ebe] transition-colors">
+            Ziga POS
           </a>
-          <a href="#terminal" className="hover:text-[#1b5ebe] transition-colors">
-            POS Terminal
+          <a href="#pay" className="hover:text-[#1b5ebe] transition-colors">
+            Ziga Pay
           </a>
-          <a href="#hardware" className="hover:text-[#1b5ebe] transition-colors">
-            Hardware Support
+          <a href="#ecosystem" className="hover:text-[#1b5ebe] transition-colors">
+            Ecosystem
           </a>
           <a href="#testimonials" className="hover:text-[#1b5ebe] transition-colors">
-            Customer Stories
+            Customers
+          </a>
+          <a href="#faq" className="hover:text-[#1b5ebe] transition-colors">
+            FAQ
           </a>
         </div>
 
-        {/* Right CTA - ONLY Get Started Button, no RWF, no separate login button */}
+        {/* Single CTA: Get Started Button Only */}
         <div className="hidden md:flex items-center">
           <a
             href="https://pos.ziga.io"
@@ -62,32 +66,39 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-slate-200 bg-white px-5 py-4 space-y-3">
           <a
-            href="#features"
+            href="#pos"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
           >
-            Features
+            Ziga POS
           </a>
           <a
-            href="#terminal"
+            href="#pay"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
           >
-            POS Terminal
+            Ziga Pay
           </a>
           <a
-            href="#hardware"
+            href="#ecosystem"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
           >
-            Hardware Support
+            Ecosystem
           </a>
           <a
             href="#testimonials"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
           >
-            Customer Stories
+            Customers
+          </a>
+          <a
+            href="#faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+          >
+            FAQ
           </a>
 
           <div className="pt-2">

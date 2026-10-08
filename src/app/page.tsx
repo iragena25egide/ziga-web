@@ -14,8 +14,12 @@ import {
   CreditCard,
   Building2,
   CheckCircle2,
-  HelpCircle,
   Package,
+  QrCode,
+  Smartphone,
+  Wallet,
+  Coins,
+  Check,
 } from "lucide-react";
 import AOS from "aos";
 
@@ -30,15 +34,15 @@ export default function HomePage() {
     });
   }, []);
 
-  const features = [
+  const posFeatures = [
     {
-      title: "Point of Sale Checkout",
-      desc: "Fast barcode search, instant MTN MoMo and Airtel Money logging, and quick tender checkout for busy cashiers.",
+      title: "Point of Sale Counter",
+      desc: "Fast barcode scan, instant MoMo QR codes, and automatic live inventory reduction with thermal printing.",
       icon: ScanBarcode,
     },
     {
       title: "Zero-Downtime Offline Mode",
-      desc: "Never stop ringing sales when local internet drops. Receipts print offline, then sync to the cloud automatically once restored.",
+      desc: "Never stop ringing sales when local internet drops. Receipts print offline, then sync automatically once restored.",
       icon: WifiOff,
     },
     {
@@ -63,26 +67,49 @@ export default function HomePage() {
     },
   ];
 
+  const payFeatures = [
+    {
+      title: "MTN MoMo & Airtel Money QR",
+      desc: "Display dynamic QR codes at checkout so customers scan and approve payments instantly without typing manual phone numbers.",
+      icon: QrCode,
+    },
+    {
+      title: "Automated Reference Matching",
+      desc: "Eliminates cashier fake SMS fraud. Ziga Pay matches digital mobile money callbacks directly against open shopping carts.",
+      icon: CheckCircle2,
+    },
+    {
+      title: "Tap & Mobile Payments",
+      desc: "Enable smartphone contact payments and electronic debit verification for in-person customer queues.",
+      icon: Smartphone,
+    },
+    {
+      title: "Consolidated Daily Cash-Out",
+      desc: "Aggregate mobile money collections and cash drawer totals into a single reconciled daily financial report.",
+      icon: Wallet,
+    },
+  ];
+
   const faqs = [
     {
-      q: "How does the free trial work?",
-      a: "You get 1 month free to test the full system — no credit card or advance fee required. Test real sales, barcode scanners, and thermal receipts directly in your shop.",
+      q: "What is the difference between Ziga POS and Ziga Pay?",
+      a: "Ziga POS is your complete retail store register (desktop offline cashiering, barcode scanning, stock tracking, and thermal receipts). Ziga Pay is our payment infrastructure that accepts MTN MoMo, Airtel Money, and QR payments seamlessly connected to your POS register.",
+    },
+    {
+      q: "How does the 1-month free trial work?",
+      a: "You get 1 month completely free to test the full system — no credit card or advance fee required. Test real sales, barcode scanners, and thermal receipts directly in your shop.",
     },
     {
       q: "Do I need internet to use Ziga POS?",
       a: "No. The Ziga POS Desktop application (.exe / .dmg) operates completely offline. Cashiers can continue selling and printing receipts without internet, and the system syncs once reconnected.",
     },
     {
-      q: "Which mobile money and payment methods are supported?",
-      a: "Ziga supports direct MTN MoMo Pay merchant codes, Airtel Money, cash drawers, and bank transfers with instant reference number logging.",
+      q: "Which thermal printers and scanners are supported?",
+      a: "Ziga POS has native driver support for standard ESC/POS USB, Bluetooth, and Network thermal printers (both 58mm and 80mm rolls) including Epson, Xprinter, Rongta, and Bixolon, as well as handheld laser barcode scanners.",
     },
     {
-      q: "Can I connect my existing thermal receipt printer?",
-      a: "Yes. Ziga POS has native driver support for standard ESC/POS USB, Bluetooth, and Network thermal printers (both 58mm and 80mm rolls) including Epson, Xprinter, Rongta, and Bixolon.",
-    },
-    {
-      q: "Can I manage multiple branches or retail shops?",
-      a: "Yes. A business owner can manage downtown retail, supermarket depots, and regional kiosks from one consolidated dashboard with separate cashier permissions.",
+      q: "Can I manage multiple retail branches?",
+      a: "Yes. Ziga includes multi-tenant isolation. A business owner can manage downtown retail shops, central warehouses, and regional kiosks from one consolidated dashboard.",
     },
   ];
 
@@ -90,36 +117,36 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col bg-white text-slate-900 overflow-x-hidden font-sans">
       <Navbar />
 
-      {/* ────────────────── 1. HERO SECTION (Clean Solid Navy & Real Rotating Dashboard) ────────────────── */}
-      <section className="relative pt-26 pb-0 md:pt-32 md:pb-0 px-4 sm:px-6 bg-[#0a192f] text-white">
+      {/* ────────────────── 1. HERO SECTION (Color from Image: #e8e9ef, Clean & Human-Crafted) ────────────────── */}
+      <section className="relative pt-24 pb-14 md:pt-32 md:pb-20 px-4 sm:px-6 bg-[#e8e9ef] text-slate-900">
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="max-w-3xl mb-12">
             {/* Clean Tag */}
             <div
               data-aos="fade-down"
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/10 text-slate-200 text-xs font-semibold uppercase tracking-wider mb-6"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-300 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-6 shadow-sm"
             >
-              <span>Retail & POS Platform</span>
+              <span>The Ziga Ecosystem • Retail & Payments</span>
             </div>
 
-            {/* Solid, Human-Crafted Headline - NO AI Gradients */}
+            {/* Solid, Human-Crafted Headline */}
             <h1
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] text-white mb-6"
+              className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] text-slate-950 mb-6"
             >
               Manage your store.<br />
-              <span className="text-[#38bdf8]">In one place.</span>
+              <span className="text-[#1b5ebe]">Power your payments.</span>
             </h1>
 
             {/* Subtitle */}
             <p
               data-aos="fade-up"
               data-aos-delay="200"
-              className="text-base sm:text-xl text-slate-300 leading-relaxed max-w-2xl mb-8 font-normal"
+              className="text-base sm:text-xl text-slate-700 leading-relaxed max-w-2xl mb-8 font-normal"
             >
-              Track sales, inventory, customer debts, and expenses with a faster workflow.
-              Built for retail stores, supermarkets, and multi-branch shops in Rwanda.
+              Ziga provides African retail businesses with a unified operating system:
+              offline-ready cashier registers with <strong>Ziga POS</strong> and seamless mobile money checkouts with <strong>Ziga Pay</strong>.
             </p>
 
             {/* Human-Designed Buttons */}
@@ -145,7 +172,7 @@ export default function HomePage() {
                 className="btn-ziga-outline h-12 px-6 text-sm gap-2 text-slate-800"
               >
                 <Download className="w-4 h-4 text-slate-600" />
-                <span>Download Desktop App</span>
+                <span>Download Desktop Register</span>
               </a>
             </div>
 
@@ -153,28 +180,28 @@ export default function HomePage() {
             <div
               data-aos="fade-up"
               data-aos-delay="400"
-              className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-700/60 text-xs text-slate-300"
+              className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-300/80 text-xs text-slate-700"
             >
               <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Offline-first desktop registers
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Offline-first desktop registers
               </span>
               <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> Thermal ESC/POS printing (58/80mm)
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Thermal ESC/POS printing (58/80mm)
               </span>
               <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" /> MTN MoMo & RRA EBM ready
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> MTN MoMo & RRA EBM ready
               </span>
             </div>
           </div>
 
-          {/* Real Moving Dashboard Showcase (2 Views) */}
-          <div className="mt-8 relative z-20">
+          {/* Real Moving Dashboard Showcase (2 Rotating Views) */}
+          <div className="mt-6 relative z-20">
             <MovingDashboardShowcase />
           </div>
         </div>
 
-        {/* ── GETWAVE SVG DIVIDER (Navy to White Content) ── */}
-        <div className="w-full overflow-hidden leading-none mt-12 -mb-1">
+        {/* ── GETWAVE SVG DIVIDER (Soft Gray to Clean White Content) ── */}
+        <div className="w-full overflow-hidden leading-none mt-14 -mb-1">
           <svg
             className="relative block w-full h-[50px] sm:h-[80px] md:h-[110px]"
             viewBox="0 0 1440 100"
@@ -190,23 +217,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────── 2. CORE FEATURES GRID ────────────────── */}
-      <section id="features" className="py-16 md:py-24 px-4 sm:px-6 bg-white">
+      {/* ────────────────── 2. ZIGA POS CAPABILITIES ────────────────── */}
+      <section id="pos" className="py-16 md:py-24 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mb-12">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
-              Core Capabilities
-            </p>
+            <span className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
+              01 • ZIGA POS
+            </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Built for real retail operations
+              Complete Point of Sale & Stock Management
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed">
-              Every feature is designed to reduce closing time, eliminate stock errors, and protect your profit margin.
+              From the cashier register counter to the back-office warehouse, Ziga POS keeps your retail operation accurate and synchronized.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feat, i) => (
+            {posFeatures.map((feat, i) => (
               <div
                 key={i}
                 className="p-6 rounded-xl bg-white border border-slate-200 hover:border-slate-300 transition-colors shadow-sm flex flex-col justify-between"
@@ -224,15 +251,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────── 3. HARDWARE & DESKTOP SECTION ────────────────── */}
-      <section id="hardware" className="py-16 md:py-20 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
+      {/* ────────────────── 3. ZIGA PAY INFRASTRUCTURE (NEW PILLAR) ────────────────── */}
+      <section id="pay" className="py-16 md:py-24 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-xl mb-12">
+            <span className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
+              02 • ZIGA PAY
+            </span>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
+              Modern Payment Collection for Rwanda
+            </h2>
+            <p className="text-slate-600 text-sm mt-3 leading-relaxed">
+              Eliminate cashier receipt errors and fake SMS notifications with integrated digital mobile money and QR checkouts.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {payFeatures.map((feat, i) => (
+              <div
+                key={i}
+                className="p-6 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-10 h-10 rounded-lg bg-slate-100 text-[#1b5ebe] flex items-center justify-center mb-4">
+                    <feat.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-2">{feat.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed">{feat.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ────────────────── 4. HARDWARE & DESKTOP REGISTERS ────────────────── */}
+      <section id="hardware" className="py-16 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
+            <span className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
               Hardware Compatibility
-            </p>
+            </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
-              Works with your existing POS hardware
+              Works with your existing store equipment
             </h2>
             <p className="text-slate-600 text-sm mt-3 leading-relaxed mb-6">
               No need to buy expensive proprietary terminals. Ziga POS connects directly to standard thermal printers, USB handheld barcode scanners, and cash drawers.
@@ -246,7 +307,7 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> USB & Bluetooth handheld laser barcode scanners
               </li>
               <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Electronic cash drawers (RJ11/RJ12 auto-kick on sale)
+                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Electronic cash drawers (RJ11/RJ12 auto-kick on checkout)
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Windows 10/11 (.exe installer) and macOS (.dmg disk image)
@@ -254,8 +315,8 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <div className="p-8 rounded-xl bg-white border border-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-900 mb-2">Desktop Application Installer</h3>
+          <div className="p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+            <h3 className="text-lg font-bold text-slate-900 mb-2">Desktop Register Installer</h3>
             <p className="text-xs text-slate-600 leading-relaxed mb-6">
               Download the native desktop register application for offline checkout speed and instant printer linking.
             </p>
@@ -282,28 +343,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────── 4. CLIENT TESTIMONIALS (CAROUSEL WITHOUT RAINBOW/AI EFFECTS) ────────────────── */}
-      <section id="testimonials" className="py-16 md:py-24 px-4 sm:px-6 bg-white">
+      {/* ────────────────── 5. CUSTOMER TESTIMONIALS (AUTO 2-BOX SLIDER EVERY 6S) ────────────────── */}
+      <section id="testimonials" className="py-16 md:py-24 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
         <div className="max-w-6xl mx-auto">
           <div className="max-w-xl mx-auto text-center mb-10">
-            <p className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
+            <span className="text-xs font-bold tracking-widest uppercase text-[#1b5ebe] font-mono">
               Merchant Stories
-            </p>
+            </span>
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold tracking-tight text-slate-900">
               Shops that run on Ziga
             </h2>
             <p className="text-slate-500 text-sm mt-2">
-              Feedback from retail store managers and hardware shop owners across Rwanda.
+              Verified feedback from retail managers, wholesale distributors, and hardware shop owners across Rwanda.
             </p>
           </div>
 
-          {/* Clean Carousel with Only Name & Message */}
+          {/* Clean 2-Box Auto-Moving Carousel (Advances by 1 box every 6s) */}
           <ClientCarousel />
         </div>
       </section>
 
-      {/* ────────────────── 5. FAQ SECTION ────────────────── */}
-      <section id="faq" className="py-16 md:py-20 px-4 sm:px-6 bg-slate-50 border-t border-slate-200">
+      {/* ────────────────── 6. FAQ SECTION ────────────────── */}
+      <section id="faq" className="py-16 md:py-20 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-bold text-slate-500 uppercase tracking-widest font-mono">
@@ -313,7 +374,7 @@ export default function HomePage() {
               Frequently Asked Questions
             </h2>
             <p className="text-slate-500 text-xs mt-1">
-              Common questions before deploying Ziga POS in your shop.
+              Common questions before deploying Ziga in your business.
             </p>
           </div>
 
@@ -343,12 +404,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ────────────────── 6. FINAL BOTTOM CTA BANNER ────────────────── */}
-      <section className="py-16 px-4 sm:px-6 bg-white">
+      {/* ────────────────── 7. FINAL ACTION CTA ────────────────── */}
+      <section className="py-16 px-4 sm:px-6 bg-slate-50 border-t border-slate-200">
         <div className="max-w-5xl mx-auto rounded-xl bg-[#0a192f] text-white p-8 sm:p-12 relative overflow-hidden shadow-xl">
           <div className="max-w-2xl">
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-3">
-              Ready to manage your store with Ziga POS?
+              Ready to modernize your retail store?
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
               Create your company workspace today. Test sales, barcode scanning, and thermal printing with our 1-month free trial.

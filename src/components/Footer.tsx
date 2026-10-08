@@ -9,9 +9,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           {/* Brand Info */}
           <div className="md:col-span-1 space-y-4">
-            <ZigaLogo size={32} showText={true} theme="dark" />
+            <div className="flex items-center gap-2">
+              <ZigaLogo size={34} />
+              <span className="font-bold text-lg text-white tracking-tight">Ziga</span>
+            </div>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Point of Sale, inventory, and customer debt management system. Engineered for retail stores, supermarkets, and distributors in Rwanda.
+              The unified retail, point of sale, and mobile payments ecosystem. Empowering commerce, merchants, and shoppers across Rwanda.
             </p>
 
             <div className="space-y-2 text-xs text-slate-400 pt-2">
@@ -28,21 +31,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product Links */}
+          {/* Solutions: Ziga POS & Ziga Pay */}
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
-              Product
+              Solutions
             </p>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#features" className="hover:text-white transition-colors">POS Terminal</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Offline Engine</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Inventory Control</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Customer Credit & Debt</a></li>
-              <li><a href="#hardware" className="hover:text-white transition-colors">Thermal Printer Drivers</a></li>
+              <li><a href="#pos" className="hover:text-white transition-colors">Ziga POS Platform</a></li>
+              <li><a href="#pay" className="hover:text-white transition-colors">Ziga Pay (MoMo & QR)</a></li>
+              <li><a href="#pos" className="hover:text-white transition-colors">Offline Desktop Register</a></li>
+              <li><a href="#pos" className="hover:text-white transition-colors">Stock & Inventory Management</a></li>
+              <li><a href="#pos" className="hover:text-white transition-colors">Customer Credit & Debt Book</a></li>
             </ul>
           </div>
 
-          {/* Platforms */}
+          {/* Platform Access */}
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
               Access
@@ -50,22 +53,22 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <a href="https://pos.ziga.io" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
-                  Cloud Web Portal (pos.ziga.io)
+                  Cloud Portal (pos.ziga.io)
                 </a>
               </li>
-              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Desktop App (Windows .exe)</a></li>
-              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Desktop App (macOS .dmg)</a></li>
-              <li><a href="https://pos.ziga.io/admin" className="hover:text-white transition-colors">Super Admin Desk</a></li>
+              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Windows Installer (.exe)</a></li>
+              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">macOS Installer (.dmg)</a></li>
+              <li><a href="https://pos.ziga.io/admin" className="hover:text-white transition-colors">Super Admin Command Desk</a></li>
             </ul>
           </div>
 
-          {/* Direct CTA */}
+          {/* Direct Action */}
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
               Get Started
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Launch your store register today on the web or download the desktop installer.
+              Launch your store register or payment checkout today with our 1-month trial.
             </p>
             <a
               href="https://pos.ziga.io"
@@ -73,7 +76,7 @@ export default function Footer() {
               rel="noreferrer"
               className="btn-ziga-primary h-10 px-4 text-xs w-full text-center mt-2"
             >
-              <span>Open Ziga POS</span>
+              <span>Launch Ziga</span>
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </a>
           </div>
@@ -83,8 +86,9 @@ export default function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Ziga. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <span>Offline-Ready</span>
-            <span>RRA EBM Compatible</span>
+            <span>Ziga POS</span>
+            <span>Ziga Pay</span>
+            <span>RRA EBM Ready</span>
             <a href="https://pos.ziga.io" className="hover:text-slate-300 font-mono">
               pos.ziga.io
             </a>

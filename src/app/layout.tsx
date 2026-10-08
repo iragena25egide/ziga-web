@@ -6,26 +6,69 @@ const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Ziga - Modern POS, Inventory & Business Platform for Rwanda & Africa",
+  metadataBase: new URL("https://ziga.io"),
+  title: "Ziga — Complete Commerce, POS & Payment Ecosystem for Africa",
   description:
-    "Ziga helps shops, retail stores, and supermarkets in Rwanda and Africa track sales, stock, debts, and expenses in one simple, fast dashboard with offline desktop registers and thermal fiscal receipts.",
+    "Ziga is the unified operating platform for modern African retail. Powering retail stores with Ziga POS (offline registers & thermal fiscal receipts) and Ziga Pay (MoMo Pay & digital checkout).",
   keywords: [
     "Ziga",
     "Ziga POS",
+    "Ziga Pay",
     "ziga.io",
     "pos.ziga.io",
-    "Point of Sale Rwanda",
-    "Retail Management System Kigali",
-    "Offline POS software",
-    "Thermal receipt printing Rwanda",
-    "MoMo Pay POS",
+    "Retail Point of Sale Rwanda",
+    "MoMo Pay integration Kigali",
+    "Offline POS desktop software",
+    "Thermal receipt printer Rwanda",
+    "Inventory and debt book software",
   ],
+  authors: [{ name: "Ziga Technologies" }],
+  creator: "Ziga Technologies",
+  publisher: "Ziga Technologies",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
-    icon: "/favicon.png",
+    icon: [
+      { url: "/favicon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_RW",
+    url: "https://ziga.io",
+    siteName: "Ziga",
+    title: "Ziga — Complete Commerce, POS & Payment Ecosystem",
+    description:
+      "Run your retail stores and transactions with Ziga POS and Ziga Pay. Fast offline registers, instant thermal receipts, and mobile money checkouts.",
+    images: [
+      {
+        url: "/favicon.png",
+        width: 512,
+        height: 512,
+        alt: "Ziga Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Ziga — Retail, POS & Payments",
+    description: "Manage sales, stock, and payments with Ziga POS & Ziga Pay.",
+    images: ["/favicon.png"],
   },
 };
 
@@ -38,8 +81,9 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${plusJakarta.variable}`}>
       <head>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
       </head>
-      <body className="font-sans antialiased bg-white text-gray-900 selection:bg-[#1b5ebe] selection:text-white">
+      <body className="font-sans antialiased bg-white text-slate-900 selection:bg-[#1b5ebe] selection:text-white">
         {children}
       </body>
     </html>
