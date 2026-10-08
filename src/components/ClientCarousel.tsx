@@ -5,39 +5,36 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const reviews = [
   {
-    name: "Aline Mukamana",
-    role: "Supermarket Manager",
+    name: "Ndizeye Olivier",
+    role: "Sales Manager, NKM",
+    business: "Clothes & Fashion Store",
     location: "Kigali",
     message:
-      "We reconcile daily cashier sales with physical stock in minutes. Before Ziga, closing our store every evening took our team almost an hour of counting receipts and manual cross-checking.",
+      "Tracking diverse clothing sizes, fashion variants, and daily boutique sales used to create inventory discrepancies every week. With Ziga POS, every garment checkout is instantly recorded and our cashiers ring up clients faster than ever.",
   },
   {
-    name: "Eric Ndayisaba",
-    role: "Hardware Depot Owner",
-    location: "Musanze",
+    name: "RWANGEYO KEVIN",
+    role: "CEO, EVALINK",
+    business: "Smartphones & Electronics",
+    location: "CHIC, Kigali",
     message:
-      "Customer credit and loan tracking became completely transparent because every customer debt balance is recorded directly at checkout. It directly protected our working capital.",
+      "Selling high-value phones and gadgets in CHIC requires absolute accuracy with serial numbers and instant payments. Ziga Pay integrated directly with our register so customers pay via MTN MoMo seamlessly with zero fake SMS risk.",
   },
   {
-    name: "Clarisse Uwimana",
-    role: "Retail Store Lead",
-    location: "Huye",
+    name: "TETA IZIA DEISE",
+    role: "CEO, Velora Luxury Beauty",
+    business: "Perfumes & Body Lotions",
+    location: "Kicukiro, Kigali",
     message:
-      "The offline desktop app and thermal printer support saved us multiple times when the local fiber network dropped during rush hours. We kept printing receipts without a single interruption.",
+      "Managing luxury perfume collections and skincare products across counter sales has never been this smooth. Ziga gives us real-time stock deductions, clean customer receipts, and accurate daily revenue reports right from our counter.",
   },
   {
-    name: "Jean Paul Habumugisha",
-    role: "General Store Proprietor",
-    location: "Rubavu",
+    name: "Claude Mugabo",
+    role: "Managing Director, Kigali Food Mart",
+    business: "Supermarket & Groceries",
+    location: "Nyarugenge, Kigali",
     message:
-      "Switching between barcode scanning and Ziga Pay mobile money was effortless. Our cashiers learned the interface in less than 20 minutes without needing special technical training.",
-  },
-  {
-    name: "Patrick Nkurunziza",
-    role: "Wholesale Beverage Distributor",
-    location: "Kigali",
-    message:
-      "Managing warehouse transfers to our retail outlets is now real-time. Cashiers receive inventory digitally and we see payment flows consolidated across all registers instantly.",
+      "The offline desktop mode is a lifesaver during peak shopping hours when internet fluctuates. We continue scanning barcodes, printing thermal ESC/POS receipts, and the database automatically synchronizes without missing a single sale.",
   },
 ];
 
@@ -78,15 +75,23 @@ export default function ClientCarousel() {
               "{item.message}"
             </p>
 
-            {/* Client Name & Store Location */}
+            {/* Client Name, Business, Role & Location */}
             <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
               <div>
-                <h4 className="font-bold text-slate-900 text-sm">{item.name}</h4>
-                <p className="text-xs text-slate-500 mt-0.5">
-                  {item.role} • <span className="font-semibold text-[#1b5ebe]">{item.location}</span>
+                <h4 className="font-bold text-slate-900 text-sm">
+                  {item.name}
+                </h4>
+                <p className="text-xs text-slate-600 mt-0.5">
+                  <span className="font-semibold text-slate-800">{item.role}</span>
+                  {item.business && (
+                    <span className="text-slate-400"> • {item.business}</span>
+                  )}
+                </p>
+                <p className="text-[11px] font-semibold text-[#1b5ebe] mt-0.5">
+                  {item.location}
                 </p>
               </div>
-              <div className="w-9 h-9 rounded-full bg-slate-100 text-[#1b5ebe] flex items-center justify-center font-bold text-xs">
+              <div className="w-10 h-10 rounded-full bg-slate-100 text-[#1b5ebe] flex items-center justify-center font-bold text-sm shrink-0 shadow-sm border border-slate-200">
                 {item.name.charAt(0)}
               </div>
             </div>
@@ -112,7 +117,9 @@ export default function ClientCarousel() {
               key={i}
               onClick={() => setStartIndex(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                startIndex === i ? "w-7 bg-[#1b5ebe]" : "w-2 bg-slate-300 hover:bg-slate-400"
+                startIndex === i
+                  ? "w-7 bg-[#1b5ebe]"
+                  : "w-2 bg-slate-300 hover:bg-slate-400"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />

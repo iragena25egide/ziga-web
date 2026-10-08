@@ -11,13 +11,17 @@ export default function Footer() {
           <div className="md:col-span-1 space-y-4">
             <ZigaLogo size={32} showText={true} theme="dark" />
             <p className="text-xs text-slate-400 leading-relaxed">
-              The unified retail, point of sale, and mobile payments ecosystem. Empowering commerce, merchants, and shoppers across Rwanda.
+              The unified retail, point of sale, and mobile payments ecosystem.
+              Empowering commerce, merchants, and shoppers across Rwanda.
             </p>
 
             <div className="space-y-2 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-slate-400" />
-                <a href="mailto:support@ziga.io" className="hover:text-white transition-colors">
+                <a
+                  href="mailto:support@ziga.io"
+                  className="hover:text-white transition-colors"
+                >
                   support@ziga.io
                 </a>
               </div>
@@ -34,11 +38,31 @@ export default function Footer() {
               Solutions
             </p>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#pos" className="hover:text-white transition-colors">Ziga POS Platform</a></li>
-              <li><a href="#pay" className="hover:text-white transition-colors">Ziga Pay (MoMo & QR)</a></li>
-              <li><a href="#pos" className="hover:text-white transition-colors">Offline Desktop Register</a></li>
-              <li><a href="#pos" className="hover:text-white transition-colors">Stock & Inventory Management</a></li>
-              <li><a href="#pos" className="hover:text-white transition-colors">Customer Credit & Debt Book</a></li>
+              <li>
+                <a href="#pos" className="hover:text-white transition-colors">
+                  Ziga POS Platform
+                </a>
+              </li>
+              <li>
+                <a href="#pay" className="hover:text-white transition-colors">
+                  Ziga Pay (MoMo & QR)
+                </a>
+              </li>
+              <li>
+                <a href="#pos" className="hover:text-white transition-colors">
+                  Offline Desktop Register
+                </a>
+              </li>
+              <li>
+                <a href="#pos" className="hover:text-white transition-colors">
+                  Stock & Inventory Management
+                </a>
+              </li>
+              <li>
+                <a href="#pos" className="hover:text-white transition-colors">
+                  Customer Credit & Debt Book
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -49,13 +73,15 @@ export default function Footer() {
             </p>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <a href="https://pos.ziga.io" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                <a
+                  href="https://pos.ziga.io"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white transition-colors flex items-center gap-1"
+                >
                   Cloud Portal (pos.ziga.io)
                 </a>
               </li>
-              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Windows Installer (.exe)</a></li>
-              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">macOS Installer (.dmg)</a></li>
-              <li><a href="https://pos.ziga.io/admin" className="hover:text-white transition-colors">Super Admin Command Desk</a></li>
             </ul>
           </div>
 
@@ -65,7 +91,8 @@ export default function Footer() {
               Get Started
             </p>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Launch your store register or payment checkout today with our 1-month trial.
+              Launch your store register or payment checkout today with our
+              1-month trial.
             </p>
             <a
               href="https://pos.ziga.io"
@@ -85,8 +112,10 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <span>Ziga POS</span>
             <span>Ziga Pay</span>
-            <span>RRA EBM Ready</span>
-            <a href="https://pos.ziga.io" className="hover:text-slate-300 font-mono">
+            <a
+              href="https://pos.ziga.io"
+              className="hover:text-slate-300 font-mono"
+            >
               pos.ziga.io
             </a>
           </div>

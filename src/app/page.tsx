@@ -125,7 +125,7 @@ export default function HomePage() {
             <div
               data-aos="fade-up"
               data-aos-delay="300"
-              className="flex items-center gap-3.5 mb-10"
+              className="flex items-center gap-3.5"
             >
               <a
                 href="https://pos.ziga.io"
@@ -136,23 +136,6 @@ export default function HomePage() {
                 <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
-            </div>
-
-            {/* Clean Trust Indicators */}
-            <div
-              data-aos="fade-up"
-              data-aos-delay="400"
-              className="flex flex-wrap items-center gap-6 pt-6 border-t border-slate-300/80 text-xs text-slate-700"
-            >
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Offline-first registers
-              </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> Thermal ESC/POS printing (58/80mm)
-              </span>
-              <span className="flex items-center gap-1.5 font-medium">
-                <CheckCircle2 className="w-4 h-4 text-[#1b5ebe]" /> MTN MoMo & RRA EBM ready
-              </span>
             </div>
           </div>
 
