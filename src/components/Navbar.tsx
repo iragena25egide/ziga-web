@@ -11,10 +11,9 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-[80] bg-white/95 backdrop-blur-md border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Brand: ONLY the Z Logo, identical to Footer */}
+        {/* Brand */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
-          <ZigaLogo size={34} />
-          <span className="font-bold text-lg text-slate-900 tracking-tight">Ziga</span>
+          <ZigaLogo size={32} showText={true} />
         </Link>
 
         {/* Clean Desktop Navigation Links */}
@@ -25,8 +24,8 @@ export default function Navbar() {
           <a href="#pay" className="hover:text-[#1b5ebe] transition-colors">
             Ziga Pay
           </a>
-          <a href="#ecosystem" className="hover:text-[#1b5ebe] transition-colors">
-            Ecosystem
+          <a href="#hardware" className="hover:text-[#1b5ebe] transition-colors">
+            Hardware
           </a>
           <a href="#testimonials" className="hover:text-[#1b5ebe] transition-colors">
             Customers
@@ -80,11 +79,11 @@ export default function Navbar() {
             Ziga Pay
           </a>
           <a
-            href="#ecosystem"
+            href="#hardware"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
           >
-            Ecosystem
+            Hardware
           </a>
           <a
             href="#testimonials"

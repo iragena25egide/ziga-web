@@ -9,10 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           {/* Brand Info */}
           <div className="md:col-span-1 space-y-4">
-            <div className="flex items-center gap-2">
-              <ZigaLogo size={34} />
-              <span className="font-bold text-lg text-white tracking-tight">Ziga</span>
-            </div>
+            <ZigaLogo size={32} showText={true} theme="dark" />
             <p className="text-xs text-slate-400 leading-relaxed">
               The unified retail, point of sale, and mobile payments ecosystem. Empowering commerce, merchants, and shoppers across Rwanda.
             </p>
