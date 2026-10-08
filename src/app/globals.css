@@ -1,68 +1,87 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #111827;
-    --navy-primary: #0b1d3a;
-    --navy-deep: #071326;
-    --blue-accent: #1b5ebe;
-    --blue-hover: #164ea0;
-    --cyan-accent: #00f2fe;
-    --gray-bg: #f8fafc;
-    --gray-border: #e2e8f0;
+    --foreground: #0f172a;
+    --navy-primary: #0a1931;
+    --navy-deep: #061124;
+    --blue-accent: #2563eb;
+    --cyan-accent: #06b6d4;
+    --emerald-accent: #10b981;
+    --amber-accent: #f59e0b;
+    --violet-accent: #8b5cf6;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-feature-settings: "cv11", "ss01";
+    font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 }
 
-/* Higura-style 3D tactile button shadow */
+/* Higura-style 3D tactile button shadow with vibrant colors */
 .btn-tactile-primary {
   color: #ffffff;
-  background-color: #1b5ebe;
-  box-shadow: 0 3px 0 0 #13468f, 0 1px 2px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+  box-shadow: 0 4px 0 0 #1e40af, 0 2px 4px rgba(37, 99, 235, 0.25);
   transition: all 0.15s ease-in-out;
 }
 .btn-tactile-primary:hover {
-  background-color: #164ea0;
-  box-shadow: 0 3px 0 0 #0f356f, 0 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+  box-shadow: 0 4px 0 0 #172554, 0 2px 6px rgba(37, 99, 235, 0.35);
 }
 .btn-tactile-primary:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 0 #0f356f, 0 1px 1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 0 0 #172554, 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-tactile-cyan {
+  color: #042f2e;
+  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+  box-shadow: 0 4px 0 0 #0891b2, 0 2px 4px rgba(6, 182, 212, 0.3);
+  transition: all 0.15s ease-in-out;
+}
+.btn-tactile-cyan:hover {
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  color: #ffffff;
+}
+.btn-tactile-cyan:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 0 #0e7490;
 }
 
 .btn-tactile-secondary {
-  color: #1f2937;
+  color: #0f172a;
   background-color: #ffffff;
-  border: 1px solid #d1d5db;
-  box-shadow: 0 3px 0 0 #d1d5db, 0 1px 2px rgba(0, 0, 0, 0.04);
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 4px 0 0 #cbd5e1, 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.15s ease-in-out;
 }
 .btn-tactile-secondary:hover {
-  background-color: #f9fafb;
-  box-shadow: 0 3px 0 0 #c4c9d1, 0 1px 2px rgba(0, 0, 0, 0.06);
+  background-color: #f8fafc;
+  box-shadow: 0 4px 0 0 #94a3b8, 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 .btn-tactile-secondary:active {
   transform: translateY(2px);
-  box-shadow: 0 1px 0 0 #c4c9d1, 0 1px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 0 0 #94a3b8;
 }
 
 /* Subtle dot grid pattern */
 .dot-pattern-light {
-  background-image: radial-gradient(#cbd5e1 1px, transparent 1.2px);
-  background-size: 8px 8px;
+  background-image: radial-gradient(#94a3b8 1px, transparent 1.2px);
+  background-size: 10px 10px;
 }
 
 .dot-pattern-navy {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1.2px);
-  background-size: 8px 8px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1.2px);
+  background-size: 10px 10px;
 }
 
 /* Custom scrollbar */
@@ -73,9 +92,9 @@
   background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #94a3b8;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #64748b;
 }
