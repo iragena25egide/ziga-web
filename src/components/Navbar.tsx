@@ -9,15 +9,15 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[80] bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <nav className="fixed top-0 left-0 right-0 z-[80] bg-transparent backdrop-blur-sm border-b border-slate-300/60 transition-colors">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        {/* Brand */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+        {/* Brand: Clean Ziga Logo without box */}
+        <Link href="/" className="flex items-center hover:opacity-90 transition-opacity">
           <ZigaLogo size={32} showText={true} />
         </Link>
 
-        {/* Clean Desktop Navigation Links */}
-        <div className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        {/* Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
           <a href="#pos" className="hover:text-[#1b5ebe] transition-colors">
             Ziga POS
           </a>
@@ -35,7 +35,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Single CTA: Get Started Button Only */}
+        {/* Single Action CTA: Get Started Button */}
         <div className="hidden md:flex items-center">
           <a
             href="https://pos.ziga.io"
@@ -53,7 +53,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             type="button"
-            className="p-2 rounded-md text-slate-700 hover:bg-slate-100"
+            className="p-2 rounded-md text-slate-800 hover:bg-slate-200/50"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -63,39 +63,39 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white px-5 py-4 space-y-3">
+        <div className="md:hidden border-t border-slate-300/80 bg-[#e8e9ef] px-5 py-4 space-y-3 shadow-lg">
           <a
             href="#pos"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+            className="block py-2 text-sm font-medium text-slate-800 hover:text-[#1b5ebe]"
           >
             Ziga POS
           </a>
           <a
             href="#pay"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+            className="block py-2 text-sm font-medium text-slate-800 hover:text-[#1b5ebe]"
           >
             Ziga Pay
           </a>
           <a
             href="#hardware"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+            className="block py-2 text-sm font-medium text-slate-800 hover:text-[#1b5ebe]"
           >
             Hardware
           </a>
           <a
             href="#testimonials"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+            className="block py-2 text-sm font-medium text-slate-800 hover:text-[#1b5ebe]"
           >
             Customers
           </a>
           <a
             href="#faq"
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+            className="block py-2 text-sm font-medium text-slate-800 hover:text-[#1b5ebe]"
           >
             FAQ
           </a>

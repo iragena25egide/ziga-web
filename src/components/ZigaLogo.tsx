@@ -19,41 +19,31 @@ export default function ZigaLogo({
     <div
       className={`inline-flex items-center gap-2.5 select-none ${className}`}
     >
-      {/* Clean Solid Navy Badge with Crisp White Geometric Z */}
-      <div
-        className="flex items-center justify-center rounded-lg shadow-sm"
-        style={{
-          width: size,
-          height: size,
-          backgroundColor: "#0a192f",
-        }}
+      {/* Standalone Vector Z Glyph without box background */}
+      <svg
+        viewBox="0 0 100 100"
+        style={{ width: size, height: size }}
+        className="shrink-0"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          viewBox="0 0 100 100"
-          className="w-[66%] h-[66%]"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {/* Top Bar */}
-          <path d="M16 22 H84 L72 36 H28 L16 22Z" fill="#1b5ebe" />
-          {/* Main Diagonal */}
-          <path d="M72 34 L32 72 H48 L86 38 L72 34Z" fill="#ffffff" />
-          <path d="M60 42 L24 76 H16 L52 42 H60Z" fill="#1b5ebe" />
-          {/* Bottom Bar */}
-          <path d="M16 78 L28 64 H72 L84 78 H16Z" fill="#1b5ebe" />
-        </svg>
-      </div>
+        {/* Top Horizontal Bar */}
+        <path d="M14 20 H86 L74 36 H26 L14 20Z" fill="#1b5ebe" />
+        {/* Crisp Center Diagonal */}
+        <path d="M74 34 L28 76 H46 L90 38 L74 34Z" fill={isDark ? "#ffffff" : "#0a192f"} />
+        <path d="M60 42 L22 80 H14 L52 42 H60Z" fill="#1b5ebe" />
+        {/* Bottom Horizontal Bar */}
+        <path d="M14 80 L26 64 H74 L86 80 H14Z" fill="#1b5ebe" />
+      </svg>
 
       {showText && (
-        <div className="flex items-center gap-1.5 leading-none">
-          <span
-            className={`font-sans text-xl font-bold tracking-tight ${
-              isDark ? "text-white" : "text-slate-900"
-            }`}
-          >
-            Ziga
-          </span>
-        </div>
+        <span
+          className={`font-sans text-xl font-bold tracking-tight leading-none ${
+            isDark ? "text-white" : "text-slate-900"
+          }`}
+        >
+          Ziga
+        </span>
       )}
     </div>
   );
