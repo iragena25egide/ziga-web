@@ -71,7 +71,7 @@ export default function ClientCarousel() {
         {[firstItem, secondItem].map((item, idx) => (
           <div
             key={`${item.name}-${idx}`}
-            className="bg-white rounded-xl border border-slate-200 p-7 sm:p-8 shadow-sm flex flex-col justify-between min-h-[220px] transition-all hover:border-slate-300"
+            className="bg-white rounded-3xl border border-slate-200/90 p-8 sm:p-9 shadow-sm hover:shadow-md flex flex-col justify-between min-h-[230px] transition-all hover:border-slate-300"
           >
             {/* Clean Message Body */}
             <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
@@ -79,52 +79,54 @@ export default function ClientCarousel() {
             </p>
 
             {/* Client Name & Store Location */}
-            <div className="pt-5 mt-5 border-t border-slate-100">
-              <h4 className="font-bold text-slate-900 text-sm">{item.name}</h4>
-              <p className="text-xs text-slate-500 mt-0.5">
-                {item.role} • <span className="font-semibold text-[#1b5ebe]">{item.location}</span>
-              </p>
+            <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <h4 className="font-bold text-slate-900 text-sm">{item.name}</h4>
+                <p className="text-xs text-slate-500 mt-0.5">
+                  {item.role} • <span className="font-semibold text-[#1b5ebe]">{item.location}</span>
+                </p>
+              </div>
+              <div className="w-9 h-9 rounded-full bg-slate-100 text-[#1b5ebe] flex items-center justify-center font-bold text-xs">
+                {item.name.charAt(0)}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Slide Navigation Controls & Progress Dots */}
-      <div className="flex items-center justify-between mt-6 px-2">
-        {/* Step Indicator Dots */}
-        <div className="flex items-center gap-1.5">
+      {/* Slide Navigation Controls - Centered, Fully Rounded, No Numbers */}
+      <div className="flex items-center justify-center gap-4 mt-8">
+        {/* Left Arrow Button */}
+        <button
+          onClick={prev}
+          className="p-2.5 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors shadow-sm"
+          aria-label="Previous review"
+        >
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+
+        {/* Step Indicator Moving Dots */}
+        <div className="flex items-center gap-2">
           {reviews.map((_, i) => (
             <button
               key={i}
               onClick={() => setStartIndex(i)}
-              className={`h-1.5 rounded-full transition-all ${
-                startIndex === i ? "w-6 bg-[#1b5ebe]" : "w-1.5 bg-slate-300 hover:bg-slate-400"
+              className={`h-2 rounded-full transition-all duration-300 ${
+                startIndex === i ? "w-7 bg-[#1b5ebe]" : "w-2 bg-slate-300 hover:bg-slate-400"
               }`}
               aria-label={`Go to slide ${i + 1}`}
             />
           ))}
         </div>
 
-        {/* Arrow Buttons */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={prev}
-            className="p-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
-            aria-label="Previous review"
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </button>
-          <span className="text-xs font-mono text-slate-400 px-1">
-            {startIndex + 1} / {reviews.length}
-          </span>
-          <button
-            onClick={next}
-            className="p-2 rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors"
-            aria-label="Next review"
-          >
-            <ChevronRight className="w-4 h-4" />
-          </button>
-        </div>
+        {/* Right Arrow Button */}
+        <button
+          onClick={next}
+          className="p-2.5 rounded-full border border-slate-200 bg-white text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-colors shadow-sm"
+          aria-label="Next review"
+        >
+          <ChevronRight className="w-4 h-4" />
+        </button>
       </div>
     </div>
   );

@@ -161,22 +161,6 @@ export default function HomePage() {
             <MovingDashboardShowcase />
           </div>
         </div>
-
-        {/* ── GETWAVE SVG DIVIDER (Soft Gray to Clean White Content) ── */}
-        <div className="w-full overflow-hidden leading-none mt-14 -mb-1">
-          <svg
-            className="relative block w-full h-[50px] sm:h-[80px] md:h-[110px]"
-            viewBox="0 0 1440 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,64C1200,75,1320,85,1380,90.7L1440,96L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
       </section>
 
       {/* ────────────────── 2. ZIGA POS CAPABILITIES ────────────────── */}
