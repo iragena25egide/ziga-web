@@ -98,3 +98,16 @@
 .animate-progress {
   animation: progress 0.8s ease-in-out infinite;
 }
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
