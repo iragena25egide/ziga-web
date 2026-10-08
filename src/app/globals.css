@@ -1,90 +1,74 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @layer base {
   :root {
     --background: #ffffff;
     --foreground: #0f172a;
-    --navy-primary: #0a1931;
-    --navy-deep: #061124;
-    --blue-accent: #2563eb;
-    --cyan-accent: #06b6d4;
-    --emerald-accent: #10b981;
-    --amber-accent: #f59e0b;
-    --violet-accent: #8b5cf6;
+    --navy-primary: #0a192f;
+    --navy-header: #071326;
+    --blue-primary: #1b5ebe;
+    --blue-dark: #124085;
+    --border-subtle: #e2e8f0;
+    --bg-canvas: #f8fafc;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: var(--font-plus-jakarta), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 }
 
-/* Higura-style 3D tactile button shadow with vibrant colors */
-.btn-tactile-primary {
+/* Unique, Human-Crafted Corporate Blue Button */
+.btn-ziga-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
-  box-shadow: 0 4px 0 0 #1e40af, 0 2px 4px rgba(37, 99, 235, 0.25);
-  transition: all 0.15s ease-in-out;
+  background-color: #1b5ebe;
+  border: 1px solid #164ea0;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-tactile-primary:hover {
-  background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
-  box-shadow: 0 4px 0 0 #172554, 0 2px 6px rgba(37, 99, 235, 0.35);
+.btn-ziga-primary:hover {
+  background-color: #164ea0;
+  border-color: #124085;
+  box-shadow: 0 4px 12px rgba(27, 94, 190, 0.2);
 }
-.btn-tactile-primary:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 0 #172554, 0 1px 2px rgba(0, 0, 0, 0.1);
+.btn-ziga-primary:active {
+  transform: translateY(1px);
 }
 
-.btn-tactile-cyan {
-  color: #042f2e;
-  background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
-  box-shadow: 0 4px 0 0 #0891b2, 0 2px 4px rgba(6, 182, 212, 0.3);
-  transition: all 0.15s ease-in-out;
-}
-.btn-tactile-cyan:hover {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
-  color: #ffffff;
-}
-.btn-tactile-cyan:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 0 #0e7490;
-}
-
-.btn-tactile-secondary {
-  color: #0f172a;
+.btn-ziga-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #334155;
   background-color: #ffffff;
   border: 1px solid #cbd5e1;
-  box-shadow: 0 4px 0 0 #cbd5e1, 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.15s ease-in-out;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.btn-tactile-secondary:hover {
+.btn-ziga-outline:hover {
   background-color: #f8fafc;
-  box-shadow: 0 4px 0 0 #94a3b8, 0 2px 5px rgba(0, 0, 0, 0.08);
+  border-color: #94a3b8;
+  color: #0f172a;
 }
-.btn-tactile-secondary:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 0 #94a3b8;
-}
-
-/* Subtle dot grid pattern */
-.dot-pattern-light {
-  background-image: radial-gradient(#94a3b8 1px, transparent 1.2px);
-  background-size: 10px 10px;
+.btn-ziga-outline:active {
+  transform: translateY(1px);
 }
 
-.dot-pattern-navy {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1.2px);
-  background-size: 10px 10px;
-}
-
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -92,9 +76,9 @@
   background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #94a3b8;
 }

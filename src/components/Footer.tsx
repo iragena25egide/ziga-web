@@ -4,109 +4,91 @@ import { Mail, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-gray-950 text-gray-200 py-16 border-t border-gray-800">
-      {/* Background Watermark Lettering */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-end justify-center select-none"
-      >
-        <div className="translate-y-12 text-[120px] sm:text-[180px] md:text-[260px] font-black tracking-tight text-white/5 leading-none">
-          ZIGA
-        </div>
-      </div>
-
-      <div className="relative max-w-6xl mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 mb-12">
+    <footer className="bg-[#0a192f] text-slate-300 py-16 border-t border-slate-800">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
           {/* Brand Info */}
-          <div className="max-w-sm">
-            <ZigaLogo size={36} showText={true} theme="dark" />
-            <p className="text-gray-400 mt-4 leading-relaxed text-sm">
-              Simple online and offline tools for sales, stock, and debts. Built for Rwandan and African retail stores that need clarity, control, and profitability.
+          <div className="md:col-span-1 space-y-4">
+            <ZigaLogo size={32} showText={true} theme="dark" />
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Point of Sale, inventory, and customer debt management system. Engineered for retail stores, supermarkets, and distributors in Rwanda.
             </p>
 
-            <div className="mt-5 space-y-2 text-xs text-gray-400">
+            <div className="space-y-2 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#38bdf8]" />
+                <Mail className="w-3.5 h-3.5 text-slate-400" />
                 <a href="mailto:support@ziga.io" className="hover:text-white transition-colors">
                   support@ziga.io
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#38bdf8]" />
-                <span>Kigali, Rwanda • Downtown KN 4 Ave</span>
+                <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                <span>KN 4 Ave, Kigali, Rwanda</span>
               </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 mt-6">
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-tactile-secondary inline-flex items-center justify-center rounded-lg text-sm font-semibold h-11 px-4 text-center"
-              >
-                Log in
-              </a>
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-tactile-primary inline-flex items-center justify-center rounded-lg text-sm font-semibold h-11 px-4 text-center"
-              >
-                Start free trial
-              </a>
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8 lg:max-w-2xl lg:ml-auto text-sm">
-            <div>
-              <p className="font-semibold text-xs tracking-wider uppercase text-gray-400 mb-4 font-mono">
-                Product
-              </p>
-              <ul className="flex flex-col gap-2.5 text-xs text-gray-300">
-                <li><a href="#solutions" className="hover:text-white transition-colors">Point of Sale Terminal</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">Offline Engine</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">Loan & Credit Book</a></li>
-                <li><a href="#solutions" className="hover:text-white transition-colors">Thermal ESC/POS Receipts</a></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing Plans</a></li>
-              </ul>
-            </div>
+          {/* Product Links */}
+          <div className="space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+              Product
+            </p>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="#features" className="hover:text-white transition-colors">POS Terminal</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Offline Engine</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Inventory Control</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Customer Credit & Debt</a></li>
+              <li><a href="#hardware" className="hover:text-white transition-colors">Thermal Printer Drivers</a></li>
+            </ul>
+          </div>
 
-            <div>
-              <p className="font-semibold text-xs tracking-wider uppercase text-gray-400 mb-4 font-mono">
-                Platforms
-              </p>
-              <ul className="flex flex-col gap-2.5 text-xs text-gray-300">
-                <li>
-                  <a href="https://pos.ziga.io" className="hover:text-white flex items-center gap-1">
-                    Cloud Web App (pos.ziga.io)
-                  </a>
-                </li>
-                <li><a href="#download" className="hover:text-white">Desktop Windows (.exe)</a></li>
-                <li><a href="#download" className="hover:text-white">Desktop macOS (.dmg)</a></li>
-                <li><a href="https://pos.ziga.io/admin" className="hover:text-white">Super Admin Command Center</a></li>
-                <li><a href="#faq" className="hover:text-white">Help Center & FAQs</a></li>
-              </ul>
-            </div>
+          {/* Platforms */}
+          <div className="space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+              Access
+            </p>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li>
+                <a href="https://pos.ziga.io" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-1">
+                  Cloud Web Portal (pos.ziga.io)
+                </a>
+              </li>
+              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Desktop App (Windows .exe)</a></li>
+              <li><a href="https://pos.ziga.io" className="hover:text-white transition-colors">Desktop App (macOS .dmg)</a></li>
+              <li><a href="https://pos.ziga.io/admin" className="hover:text-white transition-colors">Super Admin Desk</a></li>
+            </ul>
+          </div>
 
-            <div>
-              <p className="font-semibold text-xs tracking-wider uppercase text-gray-400 mb-4 font-mono">
-                Legal & Region
-              </p>
-              <ul className="flex flex-col gap-2.5 text-xs text-gray-300">
-                <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white">RRA EBM Compliance</a></li>
-                <li><a href="#" className="hover:text-white">MTN & Airtel MoMo Pay</a></li>
-              </ul>
-            </div>
+          {/* Direct CTA */}
+          <div className="space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wider text-white font-mono">
+              Get Started
+            </p>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Launch your store register today on the web or download the desktop installer.
+            </p>
+            <a
+              href="https://pos.ziga.io"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ziga-primary h-10 px-4 text-xs w-full text-center mt-2"
+            >
+              <span>Open Ziga POS</span>
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+            </a>
           </div>
         </div>
 
-        {/* Bottom Strip */}
-        <div className="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
+        {/* Bottom Bar */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} Ziga. All rights reserved.</p>
-          <p>Online & Offline-first • Built for retail stores across Rwanda</p>
+          <div className="flex items-center gap-6">
+            <span>Offline-Ready</span>
+            <span>RRA EBM Compatible</span>
+            <a href="https://pos.ziga.io" className="hover:text-slate-300 font-mono">
+              pos.ziga.io
+            </a>
+          </div>
         </div>
       </div>
     </footer>

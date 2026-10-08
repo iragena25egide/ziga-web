@@ -3,157 +3,105 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import ZigaLogo from "./ZigaLogo";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[80] px-3 sm:px-4 md:px-6 pt-3 md:pt-4 pointer-events-none">
-      <div className="pointer-events-auto relative mx-auto max-w-6xl">
-        <div className="relative flex items-center justify-between gap-4 rounded-xl px-4 sm:px-5 py-2.5 bg-white/95 backdrop-blur-md border border-gray-300 shadow-sm">
-          {/* Brand */}
-          <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <ZigaLogo size={32} showText={true} />
-          </Link>
+    <nav className="fixed top-0 left-0 right-0 z-[80] bg-white/95 backdrop-blur-md border-b border-slate-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+        {/* Brand */}
+        <Link href="/" className="flex items-center gap-2.5">
+          <ZigaLogo size={32} showText={true} />
+        </Link>
 
-          {/* Desktop Nav Items */}
-          <div className="hidden lg:flex items-center gap-1">
-            <a
-              href="/"
-              className="px-3.5 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="#solutions"
-              className="px-3.5 py-2 rounded-lg text-sm font-semibold inline-flex items-center gap-1 text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              Solutions
-              <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
-            </a>
-            <a
-              href="#demo"
-              className="px-3.5 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              Interactive Demo
-            </a>
-            <a
-              href="#pricing"
-              className="px-3.5 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              Pricing
-            </a>
-            <a
-              href="#faq"
-              className="px-3.5 py-2 rounded-lg text-sm font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50 transition-colors"
-            >
-              FAQs
-            </a>
-          </div>
-
-          {/* Action CTAs (Tactile 3D Buttons like Higura) */}
-          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
-            {/* Currency Pill */}
-            <div className="flex items-center gap-1 px-2.5 py-1 rounded-lg border border-gray-200 text-xs font-semibold text-gray-700 bg-gray-50">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>RWF</span>
-            </div>
-
-            <div className="w-px h-6 bg-gray-200 mx-0.5" />
-
-            <a
-              href="https://pos.ziga.io"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-tactile-secondary inline-flex items-center justify-center rounded-lg text-sm font-semibold h-10 px-4"
-            >
-              Log in
-            </a>
-
-            <a
-              href="https://pos.ziga.io"
-              target="_blank"
-              rel="noreferrer"
-              className="btn-tactile-primary inline-flex items-center justify-center gap-1.5 rounded-lg text-sm font-semibold h-10 px-4"
-            >
-              <span>Get started</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-2 shrink-0">
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              type="button"
-              className="p-2 rounded-lg text-gray-800 hover:bg-gray-100"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
-          </div>
+        {/* Clean Desktop Navigation Links */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="#features" className="hover:text-[#1b5ebe] transition-colors">
+            Features
+          </a>
+          <a href="#terminal" className="hover:text-[#1b5ebe] transition-colors">
+            POS Terminal
+          </a>
+          <a href="#hardware" className="hover:text-[#1b5ebe] transition-colors">
+            Hardware Support
+          </a>
+          <a href="#testimonials" className="hover:text-[#1b5ebe] transition-colors">
+            Customer Stories
+          </a>
         </div>
 
-        {/* Mobile Dropdown Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden mt-2 rounded-xl bg-white border border-gray-300 p-4 shadow-xl space-y-3">
-            <a
-              href="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-semibold text-gray-800 hover:text-[#1b5ebe]"
-            >
-              Home
-            </a>
-            <a
-              href="#solutions"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-semibold text-gray-800 hover:text-[#1b5ebe]"
-            >
-              Solutions & Workflows
-            </a>
-            <a
-              href="#demo"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-semibold text-gray-800 hover:text-[#1b5ebe]"
-            >
-              Interactive Demo
-            </a>
-            <a
-              href="#pricing"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-semibold text-gray-800 hover:text-[#1b5ebe]"
-            >
-              Pricing Plans
-            </a>
-            <a
-              href="#faq"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-sm font-semibold text-gray-800 hover:text-[#1b5ebe]"
-            >
-              FAQs
-            </a>
+        {/* Right CTA - ONLY Get Started Button, no RWF, no separate login button */}
+        <div className="hidden md:flex items-center">
+          <a
+            href="https://pos.ziga.io"
+            target="_blank"
+            rel="noreferrer"
+            className="btn-ziga-primary h-10 px-5 text-sm gap-2"
+          >
+            <span>Get Started</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
 
-            <div className="pt-3 border-t border-gray-200 flex flex-col gap-2">
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-tactile-secondary w-full py-2.5 rounded-lg text-sm font-semibold text-center"
-              >
-                Log in
-              </a>
-              <a
-                href="https://pos.ziga.io"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-tactile-primary w-full py-2.5 rounded-lg text-sm font-semibold text-center"
-              >
-                Get started (pos.ziga.io)
-              </a>
-            </div>
-          </div>
-        )}
+        {/* Mobile Hamburger Button */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            type="button"
+            className="p-2 rounded-md text-slate-700 hover:bg-slate-100"
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-slate-200 bg-white px-5 py-4 space-y-3">
+          <a
+            href="#features"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+          >
+            Features
+          </a>
+          <a
+            href="#terminal"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+          >
+            POS Terminal
+          </a>
+          <a
+            href="#hardware"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+          >
+            Hardware Support
+          </a>
+          <a
+            href="#testimonials"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-sm font-medium text-slate-700 hover:text-[#1b5ebe]"
+          >
+            Customer Stories
+          </a>
+
+          <div className="pt-2">
+            <a
+              href="https://pos.ziga.io"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-ziga-primary w-full h-11 text-sm font-semibold"
+            >
+              <span>Get Started</span>
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
