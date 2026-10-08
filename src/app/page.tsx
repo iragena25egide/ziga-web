@@ -93,14 +93,14 @@ export default function HomePage() {
       <Navbar />
 
       {/* ────────────────── 1. HERO SECTION (Color from Image: #e8e9ef, Clean & Computer Hardware Frame) ────────────────── */}
-      <section className="relative pt-24 pb-16 md:pt-28 md:pb-24 px-4 sm:px-6 bg-[#e8e9ef] text-slate-900">
+      <section className="relative pt-24 pb-20 md:pt-28 md:pb-32 px-4 sm:px-6 bg-[#e8e9ef] text-slate-900">
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Header Title Block */}
-          <div className="max-w-3xl mb-10">
+          <div className="max-w-3xl mb-8">
             {/* Clean Tag */}
             <div
               data-aos="fade-down"
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-300 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-5 shadow-sm"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-300 text-slate-700 text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm"
             >
               <span>The Ziga Ecosystem • Retail & Payments</span>
             </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
             <h1
               data-aos="fade-up"
               data-aos-delay="100"
-              className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] text-slate-950 mb-5"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.08] text-slate-950 mb-4"
             >
               Manage your store.<br />
               <span className="text-[#1b5ebe]">Power your payments.</span>
@@ -119,7 +119,7 @@ export default function HomePage() {
             <p
               data-aos="fade-up"
               data-aos-delay="200"
-              className="text-base sm:text-xl text-slate-700 leading-relaxed max-w-2xl font-normal"
+              className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-2xl font-normal"
             >
               Ziga provides African retail businesses with a unified operating system:
               efficient cashier registers with <strong>Ziga POS</strong> and seamless mobile money checkouts with <strong>Ziga Pay</strong>.
@@ -127,7 +127,7 @@ export default function HomePage() {
           </div>
 
           {/* 2-Column Split: Computer Dashboard on LEFT • Animated Ecosystem Orbit on RIGHT */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-8">
             {/* Left: Moving Dashboard Laptop Hardware Showcase */}
             <div className="lg:col-span-8 relative z-20">
               <MovingDashboardShowcase />
@@ -137,7 +137,7 @@ export default function HomePage() {
             <div
               data-aos="fade-left"
               data-aos-delay="300"
-              className="lg:col-span-4 flex flex-col items-center justify-center"
+              className="lg:col-span-4 flex flex-col items-center justify-center self-center"
             >
               <EcosystemOrbit />
             </div>
