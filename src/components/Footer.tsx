@@ -26,8 +26,17 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-2">
+                <span className="text-slate-400 font-mono text-[11px] font-bold">TEL:</span>
+                <a
+                  href="tel:0798555420"
+                  className="hover:text-white transition-colors font-mono"
+                >
+                  0798555420
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                <span>KN 4 Ave, Kigali, Rwanda</span>
+                <span>KK, Kigali, Rwanda</span>
               </div>
             </div>
           </div>

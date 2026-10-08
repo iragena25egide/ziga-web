@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Preloader from "@/components/Preloader";
 import MovingDashboardShowcase from "@/components/MovingDashboardShowcase";
-import EcosystemOrbit from "@/components/EcosystemOrbit";
 import ZigaPayPhoneShowcase from "@/components/ZigaPayPhoneShowcase";
 import ClientCarousel from "@/components/ClientCarousel";
 import {
@@ -126,21 +125,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 2-Column Split: Computer Dashboard on LEFT • Animated Ecosystem Orbit on RIGHT */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-8">
-            {/* Left: Moving Dashboard Laptop Hardware Showcase */}
-            <div className="lg:col-span-8 relative z-20">
-              <MovingDashboardShowcase />
-            </div>
-
-            {/* Right: Designed Moving Ecosystem Orbit (Market, POS, Pay, Stock, EBM) */}
-            <div
-              data-aos="fade-left"
-              data-aos-delay="300"
-              className="lg:col-span-4 flex flex-col items-center justify-center self-center"
-            >
-              <EcosystemOrbit />
-            </div>
+          {/* Real Moving Dashboard Showcase with Physical Computer Chassis */}
+          <div className="mt-8 relative z-20">
+            <MovingDashboardShowcase />
           </div>
         </div>
       </section>
