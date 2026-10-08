@@ -36,7 +36,7 @@ export default function AppMockupFrame() {
             <Globe className="w-4 h-4 text-[#1b5ebe]" />
             <span>Cloud Web Dashboard</span>
             <span className="text-[10px] px-1.5 py-0.5 rounded bg-blue-50 font-mono text-[#1b5ebe] font-bold">
-              pos.ziga.io
+              pos.zigga.io
             </span>
           </button>
 
@@ -71,7 +71,7 @@ export default function AppMockupFrame() {
             {activeTab === "dashboard" ? (
               <>
                 <Globe className="w-3.5 h-3.5 text-[#1b5ebe]" />
-                <span>https://pos.ziga.io/dashboard</span>
+                <span>https://pos.zigga.io/dashboard</span>
               </>
             ) : (
               <>
@@ -302,7 +302,7 @@ export default function AppMockupFrame() {
 
                 <div className="mt-4 pt-3 border-t border-gray-200">
                   <a
-                    href="https://pos.ziga.io"
+                    href="https://pos.zigga.io"
                     target="_blank"
                     rel="noreferrer"
                     className="btn-tactile-primary w-full py-2.5 rounded-lg text-xs font-semibold text-center flex items-center justify-center gap-1.5"

@@ -157,7 +157,7 @@ export default function ZigaPayPhoneShowcase() {
                 {/* Phone Bottom Home Bar & CTA */}
                 <div className="pt-2">
                   <a
-                    href="https://pos.ziga.io"
+                    href="https://pos.zigga.io"
                     target="_blank"
                     rel="noreferrer"
                     className="btn-ziga-primary w-full h-10 text-xs font-semibold justify-center rounded-xl"
@@ -227,7 +227,7 @@ export default function ZigaPayPhoneShowcase() {
 
           <div className="pt-2">
             <a
-              href="https://pos.ziga.io"
+              href="https://pos.zigga.io"
               target="_blank"
               rel="noreferrer"
               className="btn-ziga-primary h-11 px-5 text-xs gap-2"

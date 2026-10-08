@@ -223,7 +223,7 @@ export default function HomePage() {
             </p>
 
             <a
-              href="https://pos.ziga.io"
+              href="https://pos.zigga.io"
               target="_blank"
               rel="noreferrer"
               className="btn-ziga-primary h-11 px-5 text-xs w-full text-center"
@@ -309,7 +309,7 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
-                href="https://pos.ziga.io"
+                href="https://pos.zigga.io"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ziga-primary h-11 px-6 text-sm font-semibold gap-2"

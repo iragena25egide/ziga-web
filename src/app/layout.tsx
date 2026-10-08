@@ -10,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ziga.io"),
+  metadataBase: new URL("https://zigga.io"),
   title: "Ziga — Complete Commerce, POS & Payment Ecosystem for Africa",
   description:
     "Ziga is the unified operating platform for modern African retail. Powering retail stores with Ziga POS (offline registers & thermal fiscal receipts) and Ziga Pay (MoMo Pay & digital checkout).",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     "Ziga",
     "Ziga POS",
     "Ziga Pay",
-    "ziga.io",
-    "pos.ziga.io",
+    "zigga.io",
+    "pos.zigga.io",
     "Retail Point of Sale Rwanda",
     "MoMo Pay integration Kigali",
     "Offline POS desktop software",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_RW",
-    url: "https://ziga.io",
+    url: "https://zigga.io",
     siteName: "Ziga",
     title: "Ziga — Complete Commerce, POS & Payment Ecosystem",
     description:

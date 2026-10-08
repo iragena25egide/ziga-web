@@ -38,7 +38,7 @@ export default function Navbar() {
         {/* Single Action CTA: Get Started Button */}
         <div className="hidden md:flex items-center">
           <a
-            href="https://pos.ziga.io"
+            href="https://pos.zigga.io"
             target="_blank"
             rel="noreferrer"
             className="btn-ziga-primary h-10 px-5 text-sm gap-2"
@@ -102,7 +102,7 @@ export default function Navbar() {
 
           <div className="pt-2">
             <a
-              href="https://pos.ziga.io"
+              href="https://pos.zigga.io"
               target="_blank"
               rel="noreferrer"
               className="btn-ziga-primary w-full h-11 text-sm font-semibold"

@@ -55,7 +55,7 @@ export default function MovingDashboardShowcase() {
                 <div className="flex items-center gap-2 px-4 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 font-mono text-[11px] shadow-sm max-w-sm w-full mx-3 justify-center">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
                   <span className="truncate">
-                    {activeSlide === 0 ? "https://pos.ziga.io/dashboard/kigali-hq" : "https://pos.ziga.io/pos/counter-01"}
+                    {activeSlide === 0 ? "https://pos.zigga.io/dashboard/kigali-hq" : "https://pos.zigga.io/pos/counter-01"}
                   </span>
                 </div>
 

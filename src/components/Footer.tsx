@@ -19,10 +19,10 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-slate-400" />
                 <a
-                  href="mailto:support@ziga.io"
+                  href="mailto:support@zigga.io"
                   className="hover:text-white transition-colors"
                 >
-                  support@ziga.io
+                  support@zigga.io
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -83,12 +83,12 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <a
-                  href="https://pos.ziga.io"
+                  href="https://pos.zigga.io"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-white transition-colors flex items-center gap-1"
                 >
-                  Cloud Portal (pos.ziga.io)
+                  Cloud Portal (pos.zigga.io)
                 </a>
               </li>
             </ul>
@@ -104,7 +104,7 @@ export default function Footer() {
               1-month trial.
             </p>
             <a
-              href="https://pos.ziga.io"
+              href="https://pos.zigga.io"
               target="_blank"
               rel="noreferrer"
               className="btn-ziga-primary h-10 px-4 text-xs w-full text-center mt-2"
@@ -122,10 +122,10 @@ export default function Footer() {
             <span>Ziga POS</span>
             <span>Ziga Pay</span>
             <a
-              href="https://pos.ziga.io"
+              href="https://pos.zigga.io"
               className="hover:text-slate-300 font-mono"
             >
-              pos.ziga.io
+              pos.zigga.io
             </a>
           </div>
         </div>
